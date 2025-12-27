@@ -345,6 +345,18 @@ func checkFile(filename string) {
 				numFiles: len(mod.Files),
 			})
 
+			// testing commented code
+			allParsedFiles = append(allParsedFiles, parsedFile{
+				path:     filePath,
+				source:   fileSource,
+				program:  fileProgram,
+				parser:   fileParser,
+				lexer:    fileLex,
+				modPath:  modPath,
+				numFiles: len(mod.Files),
+			})
+			
+
 			// Extract types and functions from this file (lightweight pass)
 			if fileProgram.Module != nil && fileProgram.Module.Name != nil {
 				moduleName := fileProgram.Module.Name.Value
